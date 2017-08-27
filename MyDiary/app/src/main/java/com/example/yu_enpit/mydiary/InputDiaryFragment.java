@@ -159,6 +159,8 @@ public class InputDiaryFragment extends Fragment {
                     mDiaryImage.setImageBitmap(img);
                 }catch(IOException e){
                     e.printStackTrace();
+                } catch (java.io.IOException e) {
+                    e.printStackTrace();
                 }
                 mRealm.executeTransactionAsync(new Realm.Transaction(){
                     @Override
@@ -181,7 +183,7 @@ public class InputDiaryFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         if(requestCode == PERMISSION_REUEST_CODE){
             if(grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED){
-                Snackbar.make(mDiaryImage, R.string.permission_deny,Snackbar.LENGTH_LONG).show();
+                Snackbar.make(mDiaryImage, R.string.permissio_deny,Snackbar.LENGTH_LONG).show();
             }else{
                 pickImage();
             }
