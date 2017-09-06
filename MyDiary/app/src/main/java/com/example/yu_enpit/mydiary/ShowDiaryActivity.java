@@ -42,7 +42,7 @@ public class ShowDiaryActivity extends AppCompatActivity {
                 startActivity(shareIntent);
             }
         });
-        getSupportActionBar().setDisplaylllHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mRealm = Realm.getDefaultInstance();
 
